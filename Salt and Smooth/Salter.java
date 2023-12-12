@@ -16,16 +16,15 @@ import java.util.List;
 import java.util.Random;
 
 
-public class Salter extends ProgramPlotter {
-
-    //Referenced tutuorialspoint
-    //https://www.tutorialspoint.com/how-to-read-the-data-from-a-csv-file-in-java
-
+public class Salter {
     //program to read csv values
+
     public static List<double[]> ReadCSVFile(String csvfile){
         String delimiter = ",";
         List<double[]> resultsList = new ArrayList<>();
-
+        //Referenced tutorialspoint
+        //https://www.tutorialspoint.com/how-to-read-the-data-from-a-csv-file-in-java
+        //""
         try {
             File file = new File(csvfile);
             FileReader fr = new FileReader(file);
@@ -43,6 +42,7 @@ public class Salter extends ProgramPlotter {
             }
             br.close();
         }
+        //""
         catch (IOException ioe) {
             ioe.printStackTrace();
         }
@@ -52,9 +52,10 @@ public class Salter extends ProgramPlotter {
     public static double RandSalt(double saltmin, double saltmax){
         //Referenced Toperas answer to generating random doubles in java:
         //https://stackoverflow.com/questions/3680637/generate-a-random-double-in-a-range
+        //""
         double salt = new Random().nextDouble();
         double rand = saltmin + (salt * (saltmax - saltmin));
-
+            //""
         return rand;
     }
 
@@ -80,16 +81,16 @@ public class Salter extends ProgramPlotter {
         // Example usage
         List<double[]> readlist = ReadCSVFile("Salt and Smooth\\CSV Files tested\\functionResults-Config1.csv"); 
         List<double[]> results = Salt(readlist, 1, 10);
-        CSVWriter(results, "Salt and Smooth\\Results\\SaltResults-1.csv");
+        ProgramPlotter.CSVWriter(results, "Salt and Smooth\\SaltResults\\SaltResults-1");
 
 
         List<double[]> readlist2 = ReadCSVFile("Salt and Smooth\\CSV Files tested\\functionResults-Config2.csv"); 
         List<double[]> results2 = Salt(readlist2, 100, 1000);
-        CSVWriter(results2, "Salt and Smooth\\Results\\SaltResults-2.csv");
+        ProgramPlotter.CSVWriter(results2, "Salt and Smooth\\SaltResults\\SaltResults-2");
 
         List<double[]> readlist3 = ReadCSVFile("Salt and Smooth\\CSV Files tested\\functionResults-Config3.csv"); 
         List<double[]> results3 = Salt(readlist3, .5, .8);
-        CSVWriter(results3, "Salt and Smooth\\Results\\SaltResults-3.csv");
+        ProgramPlotter.CSVWriter(results3, "Salt and Smooth\\SaltResults\\SaltResults-3");
 
 
         /*
