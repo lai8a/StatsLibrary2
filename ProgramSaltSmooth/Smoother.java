@@ -51,14 +51,14 @@ public class Smoother {
 
     public static void main(String[] args){
         //input salt files using file reader
-        List<double[]> readlist = Salter.ReadCSVFile("Salt and Smooth\\SaltResults\\SaltResults-1.csv");
+        List<double[]> readlist = Salter.ReadCSVFile("Salt Results\\SaltResults-1.csv");
         List<double[]> smoothlist = Smooth(readlist, 3); //smooth values and write them    
-        ProgramPlotter.CSVWriter(smoothlist, "Salt and Smooth\\Smooth Results\\SmoothResults-1");
+        ProgramPlotter.CSVWriter(smoothlist, "Smooth Results\\SmoothResults-1");
         
         //try smoothing data more than once.
-        List<double[]> readlist2 = Salter.ReadCSVFile("Salt and Smooth\\Smooth Results\\SmoothResults-1.csv");
+        List<double[]> readlist2 = Salter.ReadCSVFile("Smooth Results\\SmoothResults-1.csv");
         List<double[]> smoothlist2 = Smooth(readlist2, 3); //smooth values and write them    
-        ProgramPlotter.CSVWriter(smoothlist2, "Salt and Smooth\\Smooth Results\\SmoothResults-2");
+        ProgramPlotter.CSVWriter(smoothlist2, "Smooth Results\\SmoothResults-2");
         
     }
 }

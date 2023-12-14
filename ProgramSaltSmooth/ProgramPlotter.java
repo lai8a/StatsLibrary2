@@ -72,18 +72,18 @@ public class ProgramPlotter {
     public static void main(String[] args) {
         //Test range 1 - 100, with .5 step
         List<double[]> results = ResultsInRange(1, 100, 0.5); 
-        CSVWriter(results, "functionResults-Config1");
+        CSVWriter(results, "Plot Results\\functionResults-Config1");
         System.out.println("CSV file written successfully!");
 
         //Test range 1 - 1000, with 1 step
         List<double[]> results2 = ResultsInRange(1, 1000, 1); 
-        CSVWriter(results2, "functionResults-Config2");
+        CSVWriter(results2, "Plot Results\\functionResults-Config2");
         System.out.println("CSV file written successfully!");
 
         //Test range -100 - 1, with 2 step
         //this one outputs mostly NaN because the results are undefined
         List<double[]> results3 = ResultsInRange(-100, 1, 2); 
-        CSVWriter(results3, "functionResults-Config3");
+        CSVWriter(results3, "Plot Results\\functionResults-Config3");
         System.out.println("CSV file written successfully!");
     }
 }

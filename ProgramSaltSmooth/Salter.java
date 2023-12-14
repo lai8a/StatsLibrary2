@@ -63,10 +63,10 @@ public class Salter {
         //read through file for y values and get a i/+ num
         //from it
 
-        double randsalt = RandSalt(saltmin, saltmax);
         //salt only the y values
         for (double[] data : results) {
-            
+            double randsalt = RandSalt(saltmin, saltmax);
+
             if (data.length > 1) { // Ensure there are at least two values in the array
                 data[1] += randsalt; // Salt the second value (assuming it's the y-value)
             }
@@ -79,19 +79,17 @@ public class Salter {
     //have high and low data points
     public static void main(String[] args){
         // Example usage
-        List<double[]> readlist = ReadCSVFile("Salt and Smooth\\CSV Files tested\\functionResults-Config1.csv"); 
+        List<double[]> readlist = ReadCSVFile("Plot Results\\functionResults-Config1.csv"); 
         List<double[]> results = Salt(readlist, 1, 10);
-        ProgramPlotter.CSVWriter(results, "Salt and Smooth\\SaltResults\\SaltResults-1");
+        ProgramPlotter.CSVWriter(results, "Salt Results\\SaltResults-1");
 
-
-        List<double[]> readlist2 = ReadCSVFile("Salt and Smooth\\CSV Files tested\\functionResults-Config2.csv"); 
+        List<double[]> readlist2 = ReadCSVFile("Plot Results\\functionResults-Config2.csv"); 
         List<double[]> results2 = Salt(readlist2, 100, 1000);
-        ProgramPlotter.CSVWriter(results2, "Salt and Smooth\\SaltResults\\SaltResults-2");
+        ProgramPlotter.CSVWriter(results2, "Salt Results\\SaltResults-2");
 
-        List<double[]> readlist3 = ReadCSVFile("Salt and Smooth\\CSV Files tested\\functionResults-Config3.csv"); 
+        List<double[]> readlist3 = ReadCSVFile("Plot Results/functionResults-Config3.csv"); 
         List<double[]> results3 = Salt(readlist3, .5, .8);
-        ProgramPlotter.CSVWriter(results3, "Salt and Smooth\\SaltResults\\SaltResults-3");
-
+        ProgramPlotter.CSVWriter(results3, "Salt Results\\SaltResults-3");
 
         /*
         //You can print the salted list to test if you want:
