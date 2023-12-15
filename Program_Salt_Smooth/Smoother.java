@@ -9,7 +9,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Smoother {
 
     //at the left of the graph take the right values up to the range and divide by x+1
