@@ -1,6 +1,5 @@
 # StatsLibrary2
 This is the project 2 for Probability and Applied Statistics Fall 2023 CSCI3327
-
 The structure of this repository is as follows:
 MyProject
 |-- Program_Salt_Smooth
