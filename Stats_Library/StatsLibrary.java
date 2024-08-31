@@ -9,14 +9,14 @@ import java.lang.Math;
 //-Uniform Prob Dirstribution
 //-Normal Prob Distribution
 
-//Bivariate and Multivariate Prob
+//-Bivariate and Multivariate Prob
 //-Marginal and Conditional
 //-Independent Random Variables
 
 //-Expected Value of Function w Random Variables
 //-Covariance of two random vars
 //-Expected Value and Variance of Two Random Variables
-//-Multinomail Prob Distribution
+//-Multinomial Prob Distribution
 
 
 public class StatsLibrary{
