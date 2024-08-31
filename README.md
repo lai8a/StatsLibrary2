@@ -1,5 +1,5 @@
 # StatsLibrary2
-This is the project 2 for Probability and Applied Statistics Fall 2023 CSCI3327. \
+This is the project 2 \
 The structure of this repository is as follows:
 
 MyProject\
