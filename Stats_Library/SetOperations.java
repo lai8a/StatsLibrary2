@@ -9,43 +9,58 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SetOperations {
 
 //Chapter 1: Mean Median Mode ----------------------------------------
+    public static List<Double> StringToDoubleList(String listofnums){
+        List<Double> doublelist = Arrays.stream(listofnums.split(","))
+            .map(String::trim)
+            .map(Double::parseDouble)
+            .collect(Collectors.toList());
 
-    public static Double Mean(double[] listofnums){
+            return doublelist;
+    }
+
+    public static Double Mean(String listofnums){
         //Return a 0 if there is no numbers within the list. 
         //This way, you can avoid doing unnecessary math.
-        if (listofnums.length == 0){
+
+        List<Double> numslist = StringToDoubleList(listofnums);
+
+        if (numslist.size() == 0){
             return Double.NaN;
         }
         else{
             double numerator = 0.0;
             //Iterates through list and adds each value to 
             //create the numerator for the function.
-            for (double value : listofnums){
+            for (double value : numslist){
                 numerator += value;
             }
             //Sum of all values divided by number of terms.
-            return numerator/listofnums.length;            
+            return numerator/numslist.size();            
         }
     }
     
-    public static Double Median(double[] listofnums){
-        if (listofnums.length == 0){
+    public static Double Median(String listofnums){
+
+        List<Double> numslist = StringToDoubleList(listofnums);
+
+        if (numslist.size() == 0){
             return Double.NaN;
         }
         //Calculates the index for value in the middle of the array.
         //If the index is even, it takes the mean of the two middle numbers.
         //If not, the value of the index is simply returned.
-        int medianindex = listofnums.length/2;
-        if (listofnums.length % 2 == 0){
-            double median = (listofnums[medianindex] + listofnums[medianindex - 1]) / 2;
+        int medianindex = numslist.size()/2;
+        if (numslist.size() % 2 == 0){
+            double median = (numslist[medianindex] + numslist[medianindex - 1]) / 2;
             return median;
         }
         else {
-            double median = listofnums[medianindex];
+            double median = numslist[medianindex];
             return median;
         }
     }
